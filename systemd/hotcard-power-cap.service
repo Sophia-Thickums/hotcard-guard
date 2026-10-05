@@ -1,0 +1,12 @@
+[Unit]
+Description=Cap the MI25's power so a sustained load cannot drive it to the 105C bus-loss latch
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/sbin/mi25_power_cap.py
+
+[Install]
+WantedBy=multi-user.target

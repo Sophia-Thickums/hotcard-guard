@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart the MI25 guard if the service is not running
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'systemctl is-active --quiet sophia-mi25-guard.service || systemctl restart sophia-mi25-guard.service'

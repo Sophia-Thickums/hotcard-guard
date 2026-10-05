@@ -1,0 +1,15 @@
+[Unit]
+Description=Sophia MI25 guard — hard thermal trip; aborts the load before the 105C bus-loss latch
+Documentation=file:/home/mr_misfit/Desktop/Sophia%%20Life/WORLD/work/MI25-INCIDENT-20261005/RECORD.md
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/sbin/sophia_mi25_guard
+Restart=always
+RestartSec=10
+# A guard has no business burning cycles; 2 s samples, low priority.
+Nice=10
+
+[Install]
+WantedBy=multi-user.target

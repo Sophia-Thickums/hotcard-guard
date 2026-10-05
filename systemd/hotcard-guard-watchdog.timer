@@ -1,0 +1,10 @@
+[Unit]
+Description=MI25 guard watchdog every 5 minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Persistent=false
+
+[Install]
+WantedBy=timers.target
