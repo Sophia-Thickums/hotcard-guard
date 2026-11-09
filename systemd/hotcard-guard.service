@@ -1,6 +1,6 @@
 [Unit]
 Description=Sophia MI25 guard — hard thermal trip; aborts the load before the 105C bus-loss latch
-Documentation=file:/home/mr_misfit/Desktop/Sophia%%20Life/WORLD/work/MI25-INCIDENT-20261005/RECORD.md
+Documentation=file:/home/user/Desktop/Sophia%%20Life/WORLD/work/MI25-INCIDENT-20261005/RECORD.md
 After=multi-user.target
 
 [Service]
