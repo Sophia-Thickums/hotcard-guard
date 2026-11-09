@@ -15,7 +15,7 @@
      `remove`+`rescan` does NOT rebind it (falsified 10-05). Only a FULL REBOOT recovers
      it. Only cutting the tower PSU silences the card's latched LED + buzzer.
 
-Ryan's standing decision (2026-10-05): the MI25 stays put; we do not run the sustained
+Standing decision (2026-10-05): the MI25 stays put; the sustained
 parameters; and we do not rely on being able to flip a switch afterwards. This service is
 that decision written in code, because a rule that lives only in a note gets re-broken
 (the 10-05 incident: the law was already written down and was violated anyway).
@@ -28,7 +28,7 @@ WORK. So the trip acts on the client, never on the fan.
 ★ SCOPE — LEARNED THE HARD WAY IN THIS FILE'S OWN FIRST TEST.
 The first version killed "any pid holding the MI25 render node". That set includes
 kwin_wayland (the desktop compositor), which opens every DRM node with a ~28 KiB /
-2 MiB PROBE handle and does no compute there. A trip must never take Ryan's display.
+2 MiB PROBE handle and does no compute there. A trip must never take the desktop's display.
 So a client is acted on only when BOTH hold:
     (a) it is not a known display server (by name), AND
     (b) it is actually RESIDENT on the card — drm-total-vram + drm-total-gtt above

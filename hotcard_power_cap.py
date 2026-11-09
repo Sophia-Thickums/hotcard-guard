@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """mi25_power_cap.py — hold the MI25's power cap at a safe value, IDEMPOTENTLY, every boot.
 
-★ WHY (Ryan, 2026-10-05; MEASURED the same hour).
+★ WHY (MEASURED 2026-10-05).
 The MI25's failure mode is THERMAL: measured 105-110 C and off the bus in ~10 s of sustained
 DMA at its default 260 W cap. Power converts to heat, so the watts per second ARE the heat
-per second. Capping at 180 W (the value Ryan chose) makes the card *survive work it could not
+per second. Capping at 180 W makes the card *survive work it could not
 survive before*:
 
     SAME config that latched the card this morning (llama-bench -p 2048 -ncmoe 12), at 180 W:
